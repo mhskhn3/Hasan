@@ -77,12 +77,17 @@
     .social-col a:hover{background:var(--ink); color:var(--paper);}
     .hero-blob{
       position:relative; width:100%; max-width:340px; aspect-ratio:1/1;
-      background:linear-gradient(160deg,#1B2A4A,#2E9E8F);
       border-radius:46% 54% 60% 40%/50% 45% 55% 50%;
       border:2.5px solid var(--ink); margin:0 auto;
+      overflow:hidden;
       display:flex; align-items:center; justify-content:center;
     }
-    .hero-blob .initials{font-family:'Kalam',cursive; font-size:4.4rem; color:var(--paper); font-weight:700;}
+    .hero-blob img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
     .sticky-note{
       position:absolute; background:var(--card); border:2px solid var(--ink); border-radius:10px;
       padding:10px 14px; box-shadow:4px 4px 0 var(--ink); font-weight:700; font-size:0.85rem;
@@ -285,7 +290,7 @@
         <a href="https://www.facebook.com/mhskhn1729/" target="_blank"><i class="uil uil-facebook-f"></i></a>
       </div>
       <div class="hero-blob">
-        <div class="initials">HK</div>
+        <img src="assets/img/1786037981511.png" alt="Hasan Khan profile picture">
         <div class="sticky-note note-1">Data Specialist</div>
         <div class="sticky-note note-2">@ Cognizant</div>
       </div>
