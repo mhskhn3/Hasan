@@ -1,995 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MOHD HASAN KHAN. Explore my expertise in data science.">
-    <!--==================== UNICONS ====================-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MOHD HASAN KHAN. Data Analyst — Data Science, Machine Learning & Analytics.">
+  <meta name="keywords" content="Data Analyst, Machine Learning, Data Science, Data Scientist, Hasan Khan">
+  <meta name="author" content="Hasan Khan">
+  <title>MOHD HASAN KHAN — Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <style>
+    :root{
+      --paper:#FBF6EC;
+      --paper-line:#E4DBC7;
+      --ink:#1B2A4A;
+      --ink-soft:#4B5A78;
+      --teal:#2E9E8F;
+      --coral:#E8623D;
+      --yellow:#F2B705;
+      --pencil:#8A8578;
+      --card:#FFFFFF;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0/100% 32px,
+        var(--paper);
+      line-height:1.55;
+    }
+    .display{font-family:'Kalam', cursive;}
+    a{color:inherit; text-decoration:none;}
+    ul{list-style:none;}
+    .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
 
-    <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    /* ---------- NAV ---------- */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(251,246,236,0.92);
+      backdrop-filter:blur(6px);
+      border-bottom:2px solid var(--ink);
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 32px; max-width:1180px; margin:0 auto; flex-wrap:wrap; gap:12px;
+    }
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.05rem; letter-spacing:0.02em;}
+    .logo-mark{
+      width:34px; height:34px; border-radius:8px; background:var(--coral);
+      display:flex; align-items:center; justify-content:center; color:white;
+      font-family:'Kalam', cursive; font-weight:700; transform:rotate(-6deg);
+      border:2px solid var(--ink); font-size:1.1rem;
+    }
+    .nav-links{display:flex; gap:20px; font-weight:600; font-size:0.88rem; flex-wrap:wrap;}
+    .nav-links a{display:flex; align-items:center; gap:5px; padding:4px 0;}
+    .nav-links a:hover{color:var(--coral);}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; font-weight:700; padding:11px 22px; border-radius:999px;
+      border:2px solid var(--ink); background:var(--yellow); color:var(--ink);
+      box-shadow:3px 3px 0 var(--ink); transition:transform .15s, box-shadow .15s;
+      font-size:0.9rem; cursor:pointer;
+    }
+    .btn:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--ink);}
 
-    <title>MOHD HASAN KHAN</title>
-    <meta name="keywords" content="Data Analyst, Machine Learning, Data Science, Data Scientist, Hasan Khan">
-    <meta name="author" content="Hasan Khan">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="KYe6GsSYjjdW_70JlJh1PmUMcjtCYCgVxAILWMEkWSw" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    /* ---------- HERO ---------- */
+    .hero{padding:76px 0 60px;}
+    .hero-inner{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+    .social-col{display:flex; flex-direction:column; gap:14px; margin-bottom:20px;}
+    .social-col a{
+      width:38px; height:38px; border-radius:50%; border:2px solid var(--ink);
+      display:flex; align-items:center; justify-content:center; background:var(--card);
+    }
+    .social-col a:hover{background:var(--ink); color:var(--paper);}
+    .hero-blob{
+      position:relative; width:100%; max-width:340px; aspect-ratio:1/1;
+      background:linear-gradient(160deg,#1B2A4A,#2E9E8F);
+      border-radius:46% 54% 60% 40%/50% 45% 55% 50%;
+      border:2.5px solid var(--ink); margin:0 auto;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .hero-blob .initials{font-family:'Kalam',cursive; font-size:4.4rem; color:var(--paper); font-weight:700;}
+    .sticky-note{
+      position:absolute; background:var(--card); border:2px solid var(--ink); border-radius:10px;
+      padding:10px 14px; box-shadow:4px 4px 0 var(--ink); font-weight:700; font-size:0.85rem;
+    }
+    .note-1{top:0; left:-10px; transform:rotate(-6deg);}
+    .note-2{bottom:6px; right:-16px; transform:rotate(5deg);}
+    .home-content{display:flex; flex-direction:column; align-items:flex-start;}
+    .hero h1{font-size:2.6rem; font-weight:800; letter-spacing:-1px; margin-bottom:6px;}
+    .hero h3.subtitle{font-family:'Kalam',cursive; color:var(--coral); font-size:1.5rem; margin-bottom:18px;}
+    .hero p.lead{color:var(--ink-soft); max-width:520px; margin-bottom:26px;}
+
+    /* ---------- SECTION HEAD ---------- */
+    .section{padding:90px 0;}
+    .section-head{text-align:center; margin-bottom:56px;}
+    .section-head .tag{font-family:'Kalam',cursive; color:var(--coral); font-size:1.1rem;}
+    .section-head h2{font-size:2.1rem; font-weight:800; letter-spacing:-0.5px; margin-top:6px;}
+
+    /* ---------- ABOUT ---------- */
+    .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center;}
+    .about-photo{
+      aspect-ratio:3/4; border-radius:18px; border:2.5px solid var(--ink); position:relative;
+      background:linear-gradient(160deg,#FFE9C7,#FFD8CE); overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .about-photo .initials{font-family:'Kalam',cursive; font-size:4rem; color:var(--ink); font-weight:700;}
+    .about-text p{color:var(--ink-soft); margin-bottom:26px;}
+    .about-stats{display:flex; gap:36px; margin-bottom:28px; flex-wrap:wrap;}
+    .about-stats .num{font-family:'Kalam',cursive; font-size:2rem; color:var(--coral); font-weight:700;}
+    .about-stats .lbl{font-size:0.82rem; color:var(--ink-soft); font-weight:600;}
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+    .skill-card{
+      background:var(--card); border:2px solid var(--ink); border-radius:14px; padding:24px;
+      box-shadow:5px 5px 0 var(--ink);
+    }
+    .skill-card h3{display:flex; align-items:center; gap:10px; font-size:1.05rem; margin-bottom:4px;}
+    .skill-card .sub{font-size:0.78rem; color:var(--pencil); margin-bottom:18px; display:block;}
+    .skill-row{margin-bottom:14px;}
+    .skill-row:last-child{margin-bottom:0;}
+    .skill-row .top{display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:6px;}
+    .bar{height:8px; background:var(--paper-line); border-radius:6px; overflow:hidden;}
+    .bar span{display:block; height:100%; background:var(--teal); border-radius:6px;}
+
+    /* ---------- QUALIFICATIONS ---------- */
+    .tabs{display:flex; justify-content:center; gap:16px; margin-bottom:44px;}
+    .tab-btn{
+      display:flex; align-items:center; gap:8px; padding:11px 22px; border-radius:999px;
+      border:2px solid var(--ink); font-weight:700; font-size:0.9rem; background:var(--card); cursor:pointer;
+    }
+    .tab-btn.active{background:var(--ink); color:var(--paper);}
+    .timeline{max-width:640px; margin:0 auto; position:relative;}
+    .timeline::before{
+      content:""; position:absolute; left:10px; top:6px; bottom:6px; width:2px; background:var(--paper-line);
+    }
+    .tl-item{position:relative; padding-left:40px; margin-bottom:34px;}
+    .tl-item:last-child{margin-bottom:0;}
+    .tl-dot{
+      position:absolute; left:2px; top:4px; width:18px; height:18px; border-radius:50%;
+      background:var(--coral); border:2px solid var(--ink);
+    }
+    .tl-item h3{font-size:1.05rem; margin-bottom:4px;}
+    .tl-item .org{font-weight:600; color:var(--teal); font-size:0.92rem;}
+    .tl-item .role{font-size:0.8rem; color:var(--pencil); display:block; margin-top:2px;}
+    .tl-item .when{font-size:0.8rem; color:var(--ink-soft); margin-top:6px; display:flex; align-items:center; gap:6px;}
+    .tab-panel{display:none;}
+    .tab-panel.active{display:block;}
+
+    /* ---------- EXPERTISE ---------- */
+    .expertise-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+    .exp-card{
+      background:var(--card); border:2px solid var(--ink); border-radius:14px; padding:26px 22px;
+      text-align:center; box-shadow:5px 5px 0 var(--ink); cursor:pointer; transition:transform .15s;
+    }
+    .exp-card:hover{transform:translateY(-4px);}
+    .exp-icon{font-size:1.8rem; color:var(--coral); margin-bottom:12px; display:block;}
+    .exp-card h3{font-size:1rem; margin-bottom:10px;}
+    .exp-card .view{font-size:0.8rem; font-weight:700; color:var(--teal);}
+    .exp-detail{display:none; text-align:left; margin-top:14px; padding-top:14px; border-top:1.5px dashed var(--paper-line);}
+    .exp-detail.open{display:block;}
+    .exp-detail li{display:flex; gap:8px; font-size:0.82rem; color:var(--ink-soft); margin-bottom:8px;}
+    .exp-detail li .tick{flex:none; color:var(--teal); font-weight:700;}
+
+    /* ---------- PORTFOLIO ---------- */
+    .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+    .p-card{
+      background:var(--card); border:2px solid var(--ink); border-radius:14px; overflow:hidden;
+      box-shadow:5px 5px 0 var(--ink); display:flex; flex-direction:column;
+    }
+    .p-card .thumb{
+      aspect-ratio:16/10; background:linear-gradient(135deg,#DFF3EF,#C9EAE3);
+      display:flex; align-items:center; justify-content:center; overflow:hidden;
+    }
+    .p-card .thumb img{width:100%; height:100%; object-fit:cover;}
+    .p-card .body{padding:20px; display:flex; flex-direction:column; flex:1;}
+    .p-card h3{font-size:1rem; margin-bottom:8px;}
+    .p-card p{font-size:0.85rem; color:var(--ink-soft); margin-bottom:16px; flex:1;}
+    .p-card .btn{align-self:flex-start; padding:8px 18px; font-size:0.82rem;}
+
+    /* ---------- ARTICLES ---------- */
+    .articles-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+    .a-card{
+      background:var(--card); border:2px solid var(--ink); border-radius:14px; padding:22px;
+      box-shadow:5px 5px 0 var(--ink);
+    }
+    .a-card h4{font-size:1rem; margin-bottom:6px;}
+    .a-card .journal{font-size:0.78rem; color:var(--coral); font-weight:700; margin-bottom:10px; display:block;}
+    .a-card p.excerpt{font-size:0.85rem; color:var(--ink-soft);}
+    .a-card:hover{background:#FFF9EE;}
+
+    /* ---------- CTA ---------- */
+    .cta{background:var(--ink); color:var(--paper); border-radius:24px; padding:56px; margin:0 32px; text-align:center;}
+    .cta h2{font-family:'Kalam',cursive; font-size:1.7rem; line-height:1.5; margin-bottom:22px;}
+    .cta .btn{background:var(--yellow);}
+
+    /* ---------- CONTACT ---------- */
+    .contact-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px;}
+    .c-info{
+      background:var(--card); border:2px solid var(--ink); border-radius:14px; padding:24px;
+      display:flex; align-items:center; gap:14px; margin-bottom:16px; box-shadow:4px 4px 0 var(--ink);
+    }
+    .c-info i{font-size:1.4rem; color:var(--coral);}
+    .c-info h3{font-size:0.95rem;}
+    .c-info span{font-size:0.85rem; color:var(--ink-soft);}
+    .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+    .form-grid .full{grid-column:1/-1;}
+    label{display:block; font-size:0.82rem; font-weight:700; margin-bottom:6px;}
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:10px; border:2px solid var(--ink);
+      background:var(--card); font-family:'Inter',sans-serif; font-size:0.9rem; color:var(--ink);
+    }
+    #success{color:var(--teal); font-weight:700; margin-top:14px; display:none;}
+    #error{color:var(--coral); font-weight:700; margin-top:14px; display:none;}
+
+    /* ---------- FOOTER ---------- */
+    footer{padding:70px 0 30px; margin-top:40px; text-align:center;}
+    footer h2{font-family:'Kalam',cursive; font-size:1.5rem;}
+    footer .role{color:var(--ink-soft); font-size:0.9rem; margin-bottom:20px; display:block;}
+    .footer-links{display:flex; justify-content:center; gap:24px; font-weight:600; font-size:0.88rem; margin-bottom:20px;}
+    .footer-links a:hover{color:var(--coral);}
+    .footer-socials{display:flex; justify-content:center; gap:12px; margin-bottom:24px;}
+    .footer-socials a{
+      width:38px; height:38px; border-radius:50%; border:2px solid var(--ink);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .footer-socials a:hover{background:var(--ink); color:var(--paper);}
+    .footer-copy{font-size:0.8rem; color:var(--pencil);}
+
+    .scrollup{
+      position:fixed; bottom:24px; right:24px; width:44px; height:44px; border-radius:50%;
+      background:var(--yellow); border:2px solid var(--ink); display:flex; align-items:center;
+      justify-content:center; box-shadow:3px 3px 0 var(--ink); z-index:60; opacity:0; pointer-events:none;
+      transition:opacity .2s;
+    }
+    .scrollup.show{opacity:1; pointer-events:auto;}
+
+    @media (max-width:900px){
+      .hero-inner, .about-grid, .contact-grid{grid-template-columns:1fr;}
+      .skills-grid, .expertise-grid, .portfolio-grid, .articles-grid{grid-template-columns:1fr;}
+      .expertise-grid{grid-template-columns:repeat(2,1fr);}
+      .form-grid{grid-template-columns:1fr;}
+      .nav-links{display:none;}
+      .cta{margin:0 16px;}
+    }
+  </style>
 </head>
-
 <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">MOHD HASAN KHAN</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="uil uil-estate nav__icon"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> About
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="uil uil-file-alt nav__icon"></i> Skills
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#qualifications" class="nav__link">
-                            <i class="uil uil-graduation-cap nav__icon"></i> Qualifications
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#expertise" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon"></i> Expertise
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i> Portfolio
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#articles" class="nav__link">
-                            <i class="uil uil-book-open nav__icon"></i> Articles
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="uil uil-estate nav__icon"></i> Contact Me
-                        </a>
-                    </li>
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
-            </div>
-            
-            <div class="nav__btns">
-                <!--Theme change button-->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
 
-        </nav>
-    </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/in/hasankhan17/" target="_blank" class="home__social-icon">
-                            <i class="uil uil-linkedin-alt"></i>
-                        </a>
-                        <a href="https://www.instagram.com/z_score_/" target="_blank" class="home__social-icon">
-                            <i class="uil uil-instagram-alt"></i>
-                        </a>
-                        <a href="https://github.com/mhskhn3" target="_blank" class="home__social-icon">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-                        <a href="https://www.facebook.com/mhskhn1729/" target="_blank" class="home__social-icon">
-                            <i class="uil-facebook-f"></i>
-                        </a>
-                    </div>
-
-                    <div class="home__img">
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547
-            130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775
-            97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666
-            0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346
-            165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403
-            129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028
-            -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image class="home__blob-img" x="12" y="18" xlink:href="assets/img/perfil.png" />
-                            </g>
-                        </svg>
-
-                    </div>
-                    <div class="home__data">
-                        <h1 class="home__title">Hello from Hasan Khan,</h1>
-                        <h3 class="home__subtitle">Data Analyst</h3>
-                        <p class="home__description">I am currently a Data Analyst at Cognizant, contributing to the Google xWS & Vendor Management project. In this role, I work closely with the MIS Lead to perform comprehensive data analysis, derive actionable insights, and deliver detailed reports to leadership to facilitate informed decision-making. My efforts are focused on leveraging data to enhance operational efficiency and align processes with overarching business objectives.
-
-
-                        </p>
-                        <a href="#contact" class="button button--flex">
-                            Contact Me <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="home_scroll">
-                    <a href="#about" class="home__scroll-button button--flex">
-                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Scroll down</span>
-                        <i class="uil uil-arrow-down homw__scroll-arrow"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title"> About Me</h2>
-            <span class="section__subtitle">My introduction</span>
-
-            <div class="about__container container grid">
-                <img src="assets/img/about.jpg" alt="" class="about__img">
-
-                <div class="about__data">
-                    <p class="about__description">
-                        I am a dedicated Data Science professional with extensive experience in Machine Learning, Data Analysis, and Visualization. 
-                        Having recently completed my Master’s degree at the Institute of Mathematics and Applications, Bhubaneswar, 
-                        I possess strong proficiency in Python, Google Sheet, PLX Dashboard, PLX Script and Looker Studio.
-                    </p>
-
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">10+</span>
-                            <span class="about__info-name">Months <br> experience </span>
-                        </div>
-
-                        <div>
-                            <span class="about__info-title">02+</span>
-                            <span class="about__info-name">Internship <br> worked </span>
-                        </div>
-
-                        <div>
-                            <span class="about__info-title">15+</span>
-                            <span class="about__info-name">Completed <br> projects </span>
-                        </div>
-                    </div>
-                    <div class="about__buttons">
-                        <a download="" href="assets\pdf\Hasan.pdf" class="button button--flex">
-                            Download CV <i class="uil uil-download-alt button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!--==================== SKILLS ====================-->
-        <section class="skills section" id="skills">
-            <h2 class="section__title">Skills</h2>
-            <span class="section__subtitle">My technical level</span>
-
-            <div class="skills__container container grid">
-                <div>
-                    <!--====================== SKILLS 1 =============================-->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-code-branch skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Programming Languages</h1>
-                                <span class="skills__subtitle">Several years of experience</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Python</h3>
-                                    <div class="skills__number">90%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__python"></div>
-                                </div>
-                            </div>>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">R</h3>
-                                    <div class="skills__number">70%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__r"></div>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">C++</h3>
-                                    <div class="skills__number">50%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__cplusplus"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--====================== SKILLS 2 =============================-->
-                <div class="skills__content skills__open">
-                    <div class="skills__header">
-                        <i class="uil uil-atom skills__icon"></i>
-
-                        <div>
-                            <h1 class="skills__title">Technologies</h1>
-                            <span class="skills__subtitle">Several years of experience</span>
-                        </div>
-
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list grid">
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">PLX Script</h3>
-                                <div class="skills__number">90%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__docker"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Google Cloud Platform</h3>
-                                <div class="skills__number">60%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__kubernetes"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Looker Studio</h3>
-                                <div class="skills__number">90%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__git"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Google Sheet</h3>
-                                <div class="skills__number">90%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__reactnative"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">PLX Dashboard</h3>
-                                <div class="skills__number">90%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__bash"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!--====================== SKILLS 3 =============================-->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-database skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Database Systems</h1>
-                                <span class="skills__subtitle">Several years of experience</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">MySQL</h3>
-                                    <div class="skills__number">70%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__mysql"></div>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">BigQuery</h3>
-                                    <div class="skills__number">70%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__postgresql"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== QUALIFICATION ====================-->
-        <section class="qualification section" id="qualifications">
-            <h2 class="section__title">Qualifications</h2>
-            <div class="section__subtitle">My personal journey</div>
-
-            <div class="qualification__container container">
-                <div class="qualification__tabs">
-                    <div class="qualification__button button--flex qualification__active" data-target="#education">
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Education
-                    </div>
-
-                    <div class="qualification__button button--flex" data-target="#work">
-                        <i class="uil uil-briefcase-alt qualification__icon"></i>
-                        Work
-                    </div>
-                </div>
-
-                <div class="qualification__sections">
-                    <!--===============================QUALIFICATION CONTENT 1 ===========================-->
-                    <div class="qualification__content qualification__active" data-content id="education">
-                        <!--===============================QUALIFICATION 1 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">M.Sc. in Mathematice with Data Science</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://iomaorissa.ac.in/" target="_blank">Institute of Mathematics and Applications, Bhubaneswar</a>
-                                        <br>
-                                        <h5>Post-Graduate</h5>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2022 - 2024
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-
-                        <!--===============================QUALIFICATION 2 ===========================-->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                            </div>
-
-                            <div>
-                                <h3 class="qualification__title">Bachelor's in Mathematics</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.vbspu.ac.in/en" target="_blank">Veer Bahadur Singh Purvanchal University, Jaunpur</a>
-                                        <br>
-                                        <h5>Graduate</h5>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2018 - 2021
-                                </div>
-                            </div>
-                        </div>
-
-            
-                    </div>
-
-                    <!--===============================QUALIFICATION CONTENT 2 ===========================-->
-                    <div class="qualification__content" data-content id="work">
-                        <!--===============================QUALIFICATION 1 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">Data Analyst Analyst</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.cognizant.com/in/en/" target="_blank">Cognizant Technology Solutions Corporation</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    September 2024 - Present
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        <!--===============================QUALIFICATION 2 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">Consumer Insight Data Analyst</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.beatsbydre.com/" target="_blank">Beats By Dre</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    May 2024 - July 2024
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-
-                        <!--===============================QUALIFICATION 3 ===========================-->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                
-                            </div>
-
-                            <div>
-                                <h3 class="qualification__title">Machine Learning Intern</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.iiit-bh.ac.in/" target="_blank">IIIT, Bhubaneswar</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    August 2023 - November 2023
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== Expertise ====================-->
-        <section class="expertise section" id="expertise">
-            <h2 class="section__title">Expertise</h2>
-            <span class="section__subtitle">Areas of Interest</span>
-
-            <div class="Expertise__container container grid">
-                <!--===================== Expertise 1 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-chart-line Expertise__icon"></i>
-                        <h3 class="Expertise__title">Data Science</h3>
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h3 class="Expertise__modal-title">Data Science</h3>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-                                
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>I perform extensive data analysis and interpretation to understand patterns
-                                            and trends.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Uncovering Hidden Patterns and Automating Insights.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>I provide actionable insights based on data analysis.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 2 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-brain Expertise__icon"></i>
-                        <h3 class="Expertise__title">Deep Learning</h3>
-
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h4 class="Expertise__modal-title">Deep Learning</h4>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Developed a high-accuracy, efficient CNN model for pneumonia detection.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Optimized a CNN architecture for dog-cat classification, achieving high accuracy with improved efficiency.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>I'm currently working on a project inspired by Yoon Kim's 2014 paper on CNNs for sentence classification.  This project delves into the comparative performance of Deep Neural Networks (DNNs), Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs) for sentence classification tasks.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 3 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-robot Expertise__icon"></i>
-                        <h3 class="Expertise__title">Machine Learning</h3>
-
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h4 class="Expertise__modal-title">Machine Learning</h4>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p> Leveraged hyperparameter tuning techniques to maximize the effectiveness of machine learning models for regression and classification problems.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Extensively tuned various machine learning models, including Random Forest, SVM, and K-Nearest Neighbors, to achieve peak performance for regression and classification tasks.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 4 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-language Expertise__icon"></i>
-                        <h3 class="Expertise__title">NLP</h3>
-
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h4 class="Expertise__modal-title">Web Develop</h4>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Utilized NLTK for text pre-processing in a Fake News Detection project.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Explored various word embedding techniques (e.g., Bag-of-Words, TF-IDF, one-hot encoding, etc).</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 5 ====================-->
-            
-
-
-            </div>
-        </section>
-
-        <!--==================== PORTFOLIO ====================-->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <span class="section__subtitle">Most Recent Work</span>
-
-            <div class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-
-                    <!--======================== PORTFOLIO 1 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="https://raw.githubusercontent.com/mhskhn3/GOT-DASHBOARD/main/Dashboard%201.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Game of Thrones Dashboard</h3>
-                            <p class="portfolio__description">
-                                A Tableau dashboard was created to visualize various aspects of the popular TV series Game of Thrones.
-                            </p>
-                            <a href="https://github.com/mhskhn3/GOT-DASHBOARD"
-                                class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 2 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio2.gif" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">PNEUMONIA DETECTION & CLASSIFICATION USING DEEP LEARNING</h3>
-                            <p class="portfolio__description">
-                                A new, efficient CNN model is introduced for diagnosing pneumonia in chest X-rays. This model achieves high accuracy (92.07%) with just six layers, rivaling more complex architectures. The paper explores ways to further optimize the model using different input sizes and loss functions.
-                                <a href="https://github.com/mhskhn3/PNEUMONIA-DETECTION-AND-CLASSIFICATION-USING-DEEP-LEARNING">Code</a>
-                            </p>
-                            <a href="#" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 3 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/Dashboard 1.png" alt="Featurewiz Logo" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Covid-19 Dashboard</h3>
-                            <p class="portfolio__description">
-                            visualizations created with Tableau, showcasing insights and trends from COVID-19 datasets.
-                             Explore interactive dashboards and charts that provide a comprehensive view of the pandemic's impact 
-                             on different regions, demographics, and timeframes. Use these visualizations to gain valuable insights 
-                             and make informed decisions.
-                            </p>
-                            <a href="https://github.com/mhskhn3/COVID-19-DASHBOARD" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 4 =============-->
-                    <!--======================== PORTFOLIO 5 =============-->
-
-                </div>
-
-
-                <!--============ Add Pagination =============-->
-                <div class="swiper-pagination swiper-pagination-portfolio"></div>
-            </div>
-        </section>
-
-        <!--==================== ARTICLES ====================-->
-        <section class="articles section" id="articles">
-                <h2 class="section__title">Medium Articles</h2>
-                <span class="section__subtitle">See some of my published articles</span>
-                <div class="articles__container container swiper-container">
-                    <div class="swiper-wrapper">
-                    <!--==================== ARTICLE 1 ====================-->
-                    <div class="articles__content swiper-slide">
-                        <div class="card">
-                            <a href="https://medium.com/@khanzz/implementing-students-t-test-in-python-from-scratch-252890598ff5">
-                                <h4>Implementing Student’s t-Test in Python 🐍 from Scratch</h4>
-                                <p class="journal">Published on Level Up Coding</p>
-                                <p>Learn how to code the Student’s t-test from scratch in Python, covering both independent and dependent samples. This test helps determine if two samples come from the same population by comparing their means, and understanding its implementation deepens your statistical knowledge.</p>
-                            </a>
-                            
-                        </div>
-                    </div>
-                <!--==================== ARTICLE 2 ====================-->
-                <div class="articles__content swiper-slide">
-                    <div class="card">
-                        <a href="https://medium.com/@khanzz/maximize-your-potential-8-inspiring-chatgpt-prompts-914d45b221a3">
-                            <h4>Maximize Your Potential: 🎱 Inspiring ChatGPT Prompts</h4>
-                            <p class="journal">Published by Hasan Khan</p>
-                            <p>Discover 8 powerful ChatGPT prompts designed to enhance decision-making, productivity, learning, and more. Learn how to use ChatGPT for personalized tutoring, research, skill development, and simplifying complex texts. Perfect for boosting your potential and getting the most out of your interactions with ChatGPT.</p>
-                        </a>
-                        
-                    </div>
-                </div>
-                <!--==================== ARTICLE 3 ====================-->
-                <div class="articles__content swiper-slide">
-                    <div class="card">
-                        <a href="https://medium.com/@khanzz/unleashing-the-power-of-colu-a-new-frontier-in-neural-network-activation-functions-552760cac7f4">
-                            <h4>Unleashing the Power🔌 of CoLU: A New Frontier in Neural Network Activation Functions</h4>
-                            <p class="journal">Published by Hasan Khan</p>
-                            <p>Explore the innovative Collapsing Linear Unit (CoLU) activation function, designed to address the limitations of traditional functions like ReLU. CoLU offers advantages such as smooth differentiability and balanced gradients, making it a promising candidate for improving neural network performance. The article covers CoLU's methodology, remarkable results across various datasets, and its potential impact on the future of deep learning.</p>
-                        </a>
-                        
-                    </div>
-                </div>
-                <!--==================== ARTICLE 4 ====================-->
-                <div class="articles__content swiper-slide">
-                    <div class="card">
-                        <a href="https://medium.com/@khanzz/unlocking-insights-mastering-descriptive-statistics-with-the-ames-housing-dataset-b9a3b7e24b1f">
-                            <h4>Unlocking Insights: Mastering Descriptive Statistics with the Ames Housing🏠 Dataset</h4>
-                             <p class="journal">Published by Hasan Khan</p>
-                             <p>Explore the power of descriptive statistics using the Ames Housing dataset to summarize and understand complex data.
-                                 This article covers key metrics such as central tendency, dispersion, skewness, and kurtosis. 
-                                     Learn how to analyze housing prices with Python, visualize data with histograms and box plots, 
-                                           and uncover insights into the distribution and central tendencies of Ames' housing market.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination swiper-pagination-articles"></div>
-            </div>
-        </section>
-                  
-
-        <!--==================== PROJECT IN MIND ====================-->
-        <section class="project section">
-            <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">> Would you like to get to know me better?
-                            <br>
-                            > You want to collaborate with me?</h2>
-                        <p class="project__description">Contact me now!</p>
-                        <div class="centered-container">
-                        <a href="#contact" class="button button--flex button--white">
-                            Contact Me
-                            <i class="uil uil-message project__icon button__icon button__contact"></i>
-                        </a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-</div>
-        </section>
-
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contact Me</h2>
-            <span class="section__subtitle">Get in touch</span>
-
-            <div class="contact__container container grid">
-                <div>
-                    <div class="contact__information">
-                        <i class="uil-instagram  contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Instagram</h3>
-                            <span class="contact__subtitle">@z_score_</span>
-                        </div>
-                    </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">mhskhn3@gmail.com</span>
-                        </div>
-                    </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-map-marker contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">India</span>
-                        </div>
-                    </div>
-                    
-                    <form
-    action="https://formspree.io/f/mdkneodn"
-    method="POST"
-    class="contact__form grid"
-    id="submit_form"
->
-    <div class="contact__inputs grid">
-        <div class="contact__content">
-            <label for="name" class="contact__label">Your Name</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                class="contact__input"
-                placeholder="Your Name"
-                required
-            />
+<header>
+  <nav>
+    <a href="#home" class="logo"><span class="logo-mark">H</span> Mohd Hasan Khan</a>
+    <div class="nav-links">
+      <a href="#home"><i class="uil uil-estate"></i> Home</a>
+      <a href="#about"><i class="uil uil-user"></i> About</a>
+      <a href="#skills"><i class="uil uil-file-alt"></i> Skills</a>
+      <a href="#qualifications"><i class="uil uil-graduation-cap"></i> Qualifications</a>
+      <a href="#expertise"><i class="uil uil-briefcase-alt"></i> Expertise</a>
+      <a href="#portfolio"><i class="uil uil-scenery"></i> Portfolio</a>
+      <a href="#articles"><i class="uil uil-book-open"></i> Articles</a>
+    </div>
+    <a href="#contact" class="btn">Contact Me</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div style="display:flex; gap:22px; align-items:center;">
+      <div class="social-col">
+        <a href="https://www.linkedin.com/in/hasankhan17/" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+        <a href="https://www.instagram.com/z_score_/" target="_blank"><i class="uil uil-instagram-alt"></i></a>
+        <a href="https://github.com/mhskhn3" target="_blank"><i class="uil uil-github-alt"></i></a>
+        <a href="https://www.facebook.com/mhskhn1729/" target="_blank"><i class="uil uil-facebook-f"></i></a>
+      </div>
+      <div class="hero-blob">
+        <div class="initials">HK</div>
+        <div class="sticky-note note-1">Data Analyst</div>
+        <div class="sticky-note note-2">@ Cognizant</div>
+      </div>
+    </div>
+    <div class="home-content">
+      <h1>Hello, I'm Hasan Khan</h1>
+      <h3 class="subtitle">Data Specialist</h3>
+      <p class="lead">I'm a Data Insights Specialist with 1.5+ years of experience driving operational efficiency and strategic decision-making for the Google xWS Onboarding & Vendor Management Project at Cognizant.</p>
+      <a href="#contact" class="btn">Contact Me <i class="uil uil-message"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">My introduction</div><h2>About Me</h2></div>
+    <div class="about-grid">
+      <div class="about-photo"><div class="initials">HK</div></div>
+      <div class="about-text">
+        <p>I am a Data Insights Specialist with 1.5+ years of experience driving operational efficiency and strategic decision-making for the Google xWS Onboarding & Vendor Management Project at Cognizant. My expertise lies in transforming raw, complex data into actionable insights through advanced SQL, data visualization, and automation. I design and maintain 10+ high-impact dashboards in PLX and Looker, collaborating directly with Google's Analytics Leadership and internal BI teams to ensure alignment with business goals.</p>
+        <p><strong>What I bring to the table:</strong><br>
+        1. Data Engineering & Analytics: Proficient in SQL, Python (Pandas, NumPy), and statistical modeling to extract, clean, and analyze large datasets.<br>
+        2. Visualization & Storytelling: Expert in Looker, PLX, Tableau, and Power BI—creating dashboards that drive decisions, not just display numbers.<br>
+        3. Business Acumen: I don't just build reports; I answer the "why." I translate data into narratives that help leadership make confident, informed choices.<br>
+        4. Automation & Machine Learning: Experienced in building NLP models, sentiment analysis, and predictive analytics to solve real-world business challenges.</p>
+        <div class="about-stats">
+          <div><div class="num">1.5+</div><div class="lbl">Years experience</div></div>
+          <div><div class="num">02+</div><div class="lbl">Internships</div></div>
+          <div><div class="num">15+</div><div class="lbl">Projects</div></div>
         </div>
+        <a href="assets/pdf/Hasan.pdf" download class="btn">Download CV <i class="uil uil-download-alt"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="contact__content">
-            <label for="email" class="contact__label">Your E-mail</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                class="contact__input"
-                placeholder="Your E-mail"
-                required
-            />
+<section class="section" id="skills" style="background:#F3ECDC; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">My technical level</div><h2>Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3><i class="uil uil-code-branch" style="color:var(--coral)"></i> Programming Languages</h3>
+        <span class="sub">Several years of experience</span>
+        <div class="skill-row"><div class="top"><span>Python</span><span>90%</span></div><div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>R</span><span>70%</span></div><div class="bar"><span style="width:70%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>C++</span><span>50%</span></div><div class="bar"><span style="width:50%"></span></div></div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="uil uil-atom" style="color:var(--coral)"></i> Technologies</h3>
+        <span class="sub">Several years of experience</span>
+        <div class="skill-row"><div class="top"><span>PLX Script</span><span>90%</span></div><div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>Google Cloud Platform</span><span>60%</span></div><div class="bar"><span style="width:60%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>Looker Studio</span><span>90%</span></div><div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>Google Sheet</span><span>90%</span></div><div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>PLX Dashboard</span><span>90%</span></div><div class="bar"><span style="width:90%"></span></div></div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="uil uil-database" style="color:var(--coral)"></i> Database Systems</h3>
+        <span class="sub">Several years of experience</span>
+        <div class="skill-row"><div class="top"><span>MySQL</span><span>70%</span></div><div class="bar"><span style="width:70%"></span></div></div>
+        <div class="skill-row"><div class="top"><span>BigQuery</span><span>70%</span></div><div class="bar"><span style="width:70%"></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qualifications">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">My personal journey</div><h2>Qualifications</h2></div>
+    <div class="tabs">
+      <div class="tab-btn active" data-target="education"><i class="uil uil-graduation-cap"></i> Education</div>
+      <div class="tab-btn" data-target="work"><i class="uil uil-briefcase-alt"></i> Work</div>
+    </div>
+
+    <div class="tab-panel active" id="education">
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <h3>M.Sc. in Mathematics with Data Science</h3>
+          <a class="org" href="https://iomaorissa.ac.in/" target="_blank">Institute of Mathematics and Applications, Bhubaneswar</a>
+          <span class="role">Post-Graduate</span>
+          <div class="when"><i class="uil uil-calendar-alt"></i> 2022 – 2024</div>
         </div>
-
-        <div class="contact__content">
-            <label for="phone" class="contact__label">Phone Number</label>
-            <input
-                type="text"
-                id="phone"
-                name="phone"
-                class="contact__input"
-                placeholder="Phone Number"
-                required
-            />
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <h3>Bachelor's in Mathematics</h3>
+          <a class="org" href="https://www.vbspu.ac.in/en" target="_blank">Veer Bahadur Singh Purvanchal University, Jaunpur</a>
+          <span class="role">Graduate</span>
+          <div class="when"><i class="uil uil-calendar-alt"></i> 2018 – 2021</div>
         </div>
+      </div>
     </div>
 
-    <div class="contact__content">
-        <label for="message" class="contact__label">Your Message</label>
-        <textarea
-            name="message"
-            id="message"
-            class="contact__input"
-            placeholder="Your Message"
-            style="height: 120px"
-            required
-        ></textarea>
+    <div class="tab-panel" id="work">
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <h3>Data Analyst</h3>
+          <a class="org" href="https://www.cognizant.com/in/en/" target="_blank">Cognizant Technology Solutions Corporation</a>
+          <div class="when"><i class="uil uil-calendar-alt"></i> September 2024 – Present</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <h3>Consumer Insight Data Analyst</h3>
+          <a class="org" href="https://www.beatsbydre.com/" target="_blank">Beats By Dre</a>
+          <div class="when"><i class="uil uil-calendar-alt"></i> May 2024 – July 2024</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <h3>Machine Learning Intern</h3>
+          <a class="org" href="https://www.iiit-bh.ac.in/" target="_blank">IIIT, Bhubaneswar</a>
+          <div class="when"><i class="uil uil-calendar-alt"></i> August 2023 – November 2023</div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div style="text-align: center;">
-        <button
-            type="submit"
-            class="button button--flex"
-            id="submit"
-        >
-            Send Message
-            <i class="uil uil-message button__icon"></i>
-        </button>
+<section class="section" id="expertise" style="background:#F3ECDC; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">Areas of interest</div><h2>Expertise</h2></div>
+    <div class="expertise-grid">
+      <div class="exp-card" onclick="toggleExp(this)">
+        <i class="uil uil-chart-line exp-icon"></i>
+        <h3>Data Science</h3>
+        <span class="view">View more ▾</span>
+        <div class="exp-detail">
+          <li><span class="tick">✓</span> Performs extensive data analysis and interpretation to understand patterns and trends.</li>
+          <li><span class="tick">✓</span> Uncovers hidden patterns and automates insights.</li>
+          <li><span class="tick">✓</span> Provides actionable insights based on data analysis.</li>
+        </div>
+      </div>
+      <div class="exp-card" onclick="toggleExp(this)">
+        <i class="uil uil-brain exp-icon"></i>
+        <h3>Deep Learning</h3>
+        <span class="view">View more ▾</span>
+        <div class="exp-detail">
+          <li><span class="tick">✓</span> Built a high-accuracy, efficient CNN model for pneumonia detection.</li>
+          <li><span class="tick">✓</span> Optimized a CNN architecture for dog-cat classification with improved efficiency.</li>
+          <li><span class="tick">✓</span> Currently exploring DNNs, CNNs, and RNNs for sentence classification, inspired by Yoon Kim's 2014 paper.</li>
+        </div>
+      </div>
+      <div class="exp-card" onclick="toggleExp(this)">
+        <i class="uil uil-robot exp-icon"></i>
+        <h3>Machine Learning</h3>
+        <span class="view">View more ▾</span>
+        <div class="exp-detail">
+          <li><span class="tick">✓</span> Uses hyperparameter tuning to maximize model performance for regression and classification.</li>
+          <li><span class="tick">✓</span> Tunes Random Forest, SVM, and K-Nearest Neighbors models for peak performance.</li>
+        </div>
+      </div>
+      <div class="exp-card" onclick="toggleExp(this)">
+        <i class="uil uil-language exp-icon"></i>
+        <h3>NLP</h3>
+        <span class="view">View more ▾</span>
+        <div class="exp-detail">
+          <li><span class="tick">✓</span> Used NLTK for text pre-processing in a Fake News Detection project.</li>
+          <li><span class="tick">✓</span> Explored word-embedding techniques including Bag-of-Words, TF-IDF, and one-hot encoding.</li>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div id="success" style="display: none;">
-        <p class="green textcenter">
-            Your message was sent successfully! I will be in touch as soon as I can.
-        </p>
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">Most recent work</div><h2>Portfolio</h2></div>
+    <div class="portfolio-grid">
+      <div class="p-card">
+        <div class="thumb"><img src="https://raw.githubusercontent.com/mhskhn3/GOT-DASHBOARD/main/Dashboard%201.png" alt="Game of Thrones Dashboard" loading="lazy"></div>
+        <div class="body">
+          <h3>Game of Thrones Dashboard</h3>
+          <p>A Tableau dashboard visualizing various aspects of the popular TV series Game of Thrones.</p>
+          <a href="https://github.com/mhskhn3/GOT-DASHBOARD" target="_blank" class="btn">View <i class="uil uil-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="thumb"><img src="assets/img/portfolio2.gif" alt="Pneumonia Detection" loading="lazy"></div>
+        <div class="body">
+          <h3>Pneumonia Detection &amp; Classification Using Deep Learning</h3>
+          <p>An efficient six-layer CNN model for diagnosing pneumonia in chest X-rays, reaching 92.07% accuracy — rivaling far more complex architectures.</p>
+          <a href="https://github.com/mhskhn3/PNEUMONIA-DETECTION-AND-CLASSIFICATION-USING-DEEP-LEARNING" target="_blank" class="btn">View <i class="uil uil-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="thumb"><img src="https://github.com/mhskhn3/COVID-19-DASHBOARD/blob/main/Dashboard%201.png?raw=true" alt="Covid-19 Dashboard" loading="lazy"></div>
+        <div class="body">
+          <h3>Covid-19 Dashboard</h3>
+          <p>Tableau visualizations showcasing insights and trends from COVID-19 datasets across regions, demographics, and timeframes.</p>
+          <a href="https://github.com/mhskhn3/COVID-19-DASHBOARD" target="_blank" class="btn">View <i class="uil uil-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
-    <div id="error" style="display: none;">
-        <p>
-            Something went wrong, try refreshing and submitting the form again.
-        </p>
+  </div>
+</section>
+
+<section class="section" id="articles" style="background:#F3ECDC; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">See some of my published work</div><h2>Medium Articles</h2></div>
+    <div class="articles-grid">
+      <a class="a-card" href="https://medium.com/@khanzz/implementing-students-t-test-in-python-from-scratch-252890598ff5" target="_blank">
+        <h4>Implementing Student's t-Test in Python 🐍 from Scratch</h4>
+        <span class="journal">Published on Level Up Coding</span>
+        <p class="excerpt">Coding the Student's t-test from scratch in Python, covering both independent and dependent samples, and what it reveals about comparing two populations.</p>
+      </a>
+      <a class="a-card" href="https://medium.com/@khanzz/maximize-your-potential-8-inspiring-chatgpt-prompts-914d45b221a3" target="_blank">
+        <h4>Maximize Your Potential: 🎱 Inspiring ChatGPT Prompts</h4>
+        <span class="journal">Published by Hasan Khan</span>
+        <p class="excerpt">Eight ChatGPT prompts for sharper decision-making, productivity, and learning — from personalized tutoring to simplifying dense texts.</p>
+      </a>
+      <a class="a-card" href="https://medium.com/@khanzz/unleashing-the-power-of-colu-a-new-frontier-in-neural-network-activation-functions-552760cac7f4" target="_blank">
+        <h4>Unleashing the Power 🔌 of CoLU: A New Frontier in Activation Functions</h4>
+        <span class="journal">Published by Hasan Khan</span>
+        <p class="excerpt">A look at the Collapsing Linear Unit (CoLU) activation function — smooth differentiability, balanced gradients, and its potential for deep learning.</p>
+      </a>
+      <a class="a-card" href="https://medium.com/@khanzz/unlocking-insights-mastering-descriptive-statistics-with-the-ames-housing-dataset-b9a3b7e24b1f" target="_blank">
+        <h4>Unlocking Insights: Descriptive Statistics with the Ames Housing 🏠 Dataset</h4>
+        <span class="journal">Published by Hasan Khan</span>
+        <p class="excerpt">Using central tendency, dispersion, skewness, and kurtosis to explore housing prices — with histograms and box plots in Python.</p>
+      </a>
     </div>
-</form>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta">
+      <h2>&gt; Would you like to get to know me better?<br>&gt; Want to collaborate with me?</h2>
+      <a href="#contact" class="btn">Contact Me <i class="uil uil-message"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">Get in touch</div><h2>Contact Me</h2></div>
+    <div class="contact-grid">
+      <div>
+        <div class="c-info"><i class="uil uil-instagram"></i><div><h3>Instagram</h3><span>@z_score_</span></div></div>
+        <div class="c-info"><i class="uil uil-envelope"></i><div><h3>Email</h3><span>mhskhn3@gmail.com</span></div></div>
+        <div class="c-info"><i class="uil uil-map-marker"></i><div><h3>Location</h3><span>India</span></div></div>
+      </div>
+      <form action="https://formspree.io/f/mdkneodn" method="POST" id="submit_form">
+        <div class="form-grid">
+          <div><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Your Name" required></div>
+          <div><label for="email">Your E-mail</label><input type="email" id="email" name="email" placeholder="Your E-mail" required></div>
+          <div class="full"><label for="phone">Phone Number</label><input type="text" id="phone" name="phone" placeholder="Phone Number" required></div>
+          <div class="full">
+            <label for="message">Your Message</label>
+            <textarea name="message" id="message" placeholder="Your Message" style="height:120px" required></textarea>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <button type="submit" class="btn" id="submit">Send Message <i class="uil uil-message"></i></button>
+        </div>
+        <p id="success">Your message was sent successfully! I will be in touch as soon as I can.</p>
+        <p id="error">Something went wrong — try refreshing and submitting the form again.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer">
+  <div class="wrap">
+    <h2>Mohd Hasan Khan</h2>
+    <span class="role">Data Specialist</span>
+    <div class="footer-links">
+      <a href="#expertise">Expertise</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact Me</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/mhskhn1729/" target="_blank"><i class="uil uil-facebook-f"></i></a>
+      <a href="https://www.instagram.com/z_score_/" target="_blank"><i class="uil uil-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/hasankhan17/" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+    </div>
+    <p class="footer-copy">© Mohd Hasan Khan. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="#home" class="scrollup" id="scroll-up"><i class="uil uil-arrow-up"></i></a>
 
 <script>
-    document.getElementById('submit_form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        
-        var form = event.target;
-        var formData = new FormData(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.ok) {
-                document.getElementById('success').style.display = 'block';
-                form.reset(); // Optionally reset the form
-            } else {
-                document.getElementById('error').style.display = 'block';
-            }
-        })
-        .catch(() => {
-            document.getElementById('error').style.display = 'block';
-        });
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
     });
+  });
+
+  // Expertise toggle
+  function toggleExp(card){
+    const detail = card.querySelector('.exp-detail');
+    document.querySelectorAll('.exp-detail.open').forEach(d=>{ if(d!==detail) d.classList.remove('open'); });
+    detail.classList.toggle('open');
+  }
+
+  // Scroll-up button
+  const scrollBtn = document.getElementById('scroll-up');
+  window.addEventListener('scroll', ()=>{
+    scrollBtn.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Contact form (Formspree AJAX)
+  document.getElementById('submit_form').addEventListener('submit', function(event){
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(result => {
+      document.getElementById('success').style.display = 'block';
+      document.getElementById('error').style.display = 'none';
+      form.reset();
+    })
+    .catch(() => {
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('success').style.display = 'none';
+    });
+  });
 </script>
 
-                    
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <!--==================== FOOTER ====================-->
-    <footer class="footer" id="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <h2 class="footer__title">Mohd Hasan Khan</h2>
-                    <span class="footer__subtitle">Consumer Insight Data Analyst</span>
-                </div>
-
-                <ul class="footer__links" style="align-self: center;">
-                    <li>
-                        <a href="#expertise" class="footer__link">Expertise</a>
-                    </li>
-
-                    <li>
-                        <a href="#portfolio" class="footer__link">Portfolio</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="footer__link">Contact Me</a>
-                    </li>
-                </ul>
-
-                <div class="footer__socials" style="align-self: center;">
-                    <a href="https://www.facebook.com/mhskhn1729/" class="footer__social" target="_blank">
-                        <i class="uil-facebook-f"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/z_score_/" target="_blank"
-                        class="footer__social">
-                        <i class="uil uil-instagram"></i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/hasankhan17/" target="_blank" class="footer__social">
-                        <i class="uil-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-
-            <p class="footer__copy" style="margin-top: 10px;">&#169; Mohd Hasan Khan. All rights reserved.</p>
-        </div>
-    </footer>
-
-
-    <!--==================== SCROLL TOP ====================-->
-    <a href="" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scroll__icon"></i>
-    </a>
-
-    <!--==================== SWIPER JS ====================-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!--==================== MAIN JS ====================-->
-    <script src="assets/js/main.js"></script>
-
 </body>
-
-</html>
-
-</body>
-
 </html>
